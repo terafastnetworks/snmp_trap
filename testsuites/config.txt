@@ -1,0 +1,8 @@
+{
+
+'switch_ip'      : '10.99.99.225',
+'trap_rcvr_ip'   : '10.99.99.79',
+'log_filename'   : 'output_log.txt',
+'vnc_terminal'   : 100,
+
+}

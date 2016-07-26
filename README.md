@@ -24,6 +24,7 @@ Commands to invoke automation:
        syscontact admin@domain.com
 4. Make snmpd use the newly created file and make it listen to all interfaces:
    Edit /etc/default/snmpd
+   
    Change from:
 
        # snmpd options (use syslog, close stdin/out/err).
@@ -50,10 +51,12 @@ Commands to invoke automation:
        #snmptrapd options (use syslog).
        TRAPDOPTS='-C -c /etc/snmp/snmptrapd.conf -Lsd -p /var/run/snmptrapd.pid'
 
-5. Restart snmpd service(sudo service snmpd restart)
-6. Go to the directory - ~/snmp_trap/testsuites
-7. Modify the config.txt file(eg: ip, trap_rcvr_ip)
-8. Use python nosetests to run automation testsuites
+5. Make sure "authcommunity log public" this line is present in /etc/snmp/snmptrapd.conf
+6. Restart snmpd service(sudo service snmpd restart)
+7. Check snmptrapd is running (ps -aef | grep snmptrapd)
+7. Go to the directory - ~/snmp_trap/testsuites
+8. Modify the config.txt file(eg: ip, trap_rcvr_ip)
+9. Use python nosetests to run automation testsuites
 
 nosetests command:
 ********************
